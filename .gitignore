@@ -67,3 +67,6 @@ typings/
 
 # Yarn Integrity file
 .yarn-intgrity
+
+#Gradle
+.gradle
