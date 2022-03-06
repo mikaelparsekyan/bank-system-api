@@ -1,4 +1,4 @@
-package com.mikaelparsekyan.eventservice.enumeration;
+package com.mikaelparsekyan.common.enumeration;
 
 public enum EventStatus {
     SUCCESS,

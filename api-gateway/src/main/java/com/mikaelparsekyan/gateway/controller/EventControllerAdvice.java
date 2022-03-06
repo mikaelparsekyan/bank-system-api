@@ -1,4 +1,4 @@
-package com.mikaelparsekyan.eventservice.controller;
+package com.mikaelparsekyan.gateway.controller;
 
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
 import com.mikaelparsekyan.common.util.ResponseObject;

@@ -1,2 +1,3 @@
 include 'common'
 include 'event-service'
+include 'api-gateway'

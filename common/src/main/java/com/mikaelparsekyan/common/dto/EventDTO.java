@@ -1,4 +1,4 @@
-package com.mikaelparsekyan.eventservice.service.dto;
+package com.mikaelparsekyan.common.dto;
 
 import com.mikaelparsekyan.common.enumeration.EventStatus;
 import com.mikaelparsekyan.common.enumeration.EventType;

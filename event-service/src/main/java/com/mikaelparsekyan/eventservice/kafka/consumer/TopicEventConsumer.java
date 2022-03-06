@@ -1,7 +1,7 @@
 package com.mikaelparsekyan.eventservice.kafka.consumer;
 
 import com.google.gson.Gson;
-import com.mikaelparsekyan.eventservice.kafka.topic.Topic;
+import com.mikaelparsekyan.common.kafka.Topic;
 import com.mikaelparsekyan.eventservice.service.EventService;
 import com.mikaelparsekyan.eventservice.service.dto.EventDTO;
 import lombok.RequiredArgsConstructor;
@@ -11,12 +11,12 @@ import org.springframework.stereotype.Component;
 
 @RequiredArgsConstructor
 @Component
-public class TopicUserCreationConsumer implements TopicConsumer<ConsumerRecord<String, String>> {
+public class TopicEventConsumer implements TopicConsumer<ConsumerRecord<String, String>> {
 
     private final EventService eventService;
     private final Gson gson;
 
-    @KafkaListener(id = "TopicUserCreatedConsumer", topics = Topic.Constants.USER_CREATED)
+    @KafkaListener(id = "TopicEventConsumer", topics = Topic.Constants.CREATE_EVENT)
     public void listen(ConsumerRecord<String, String> message) {
         EventDTO event = gson.fromJson(message.value(), EventDTO.class);
         this.eventService.saveEvent(event);

@@ -1,7 +1,7 @@
 package com.mikaelparsekyan.eventservice.persistence.model;
 
-import com.mikaelparsekyan.eventservice.enumeration.EventStatus;
-import com.mikaelparsekyan.eventservice.enumeration.EventType;
+import com.mikaelparsekyan.common.enumeration.EventStatus;
+import com.mikaelparsekyan.common.enumeration.EventType;
 import lombok.Data;
 
 import javax.persistence.Column;
