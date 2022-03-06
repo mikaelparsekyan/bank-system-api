@@ -1,8 +1,8 @@
 package com.mikaelparsekyan.eventservice.service;
 
+import com.mikaelparsekyan.common.dto.EventDTO;
 import com.mikaelparsekyan.eventservice.persistence.model.Event;
 import com.mikaelparsekyan.eventservice.persistence.repository.EventRepository;
-import com.mikaelparsekyan.eventservice.service.dto.EventDTO;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;

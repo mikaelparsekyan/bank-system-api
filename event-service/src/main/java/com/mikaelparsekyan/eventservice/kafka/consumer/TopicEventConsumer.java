@@ -1,9 +1,9 @@
 package com.mikaelparsekyan.eventservice.kafka.consumer;
 
 import com.google.gson.Gson;
+import com.mikaelparsekyan.common.dto.EventDTO;
 import com.mikaelparsekyan.common.kafka.Topic;
 import com.mikaelparsekyan.eventservice.service.EventService;
-import com.mikaelparsekyan.eventservice.service.dto.EventDTO;
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.kafka.annotation.KafkaListener;
