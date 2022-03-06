@@ -1,19 +1,25 @@
 package com.mikaelparsekyan.eventservice.service;
 
-import com.mikaelparsekyan.eventservice.kafka.topic.Topic;
+import com.mikaelparsekyan.eventservice.persistence.model.Event;
+import com.mikaelparsekyan.eventservice.persistence.repository.EventRepository;
 import com.mikaelparsekyan.eventservice.service.dto.EventDTO;
 import lombok.AllArgsConstructor;
-import org.springframework.kafka.core.KafkaTemplate;
+import lombok.extern.slf4j.Slf4j;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @AllArgsConstructor
 @Service
 public class EventService {
 
-    private final KafkaTemplate<String, Object> kafkaTemplate;
-    
-    public EventDTO sendEvent(EventDTO eventDTO) {
-        kafkaTemplate.send(Topic.USER_CREATION, eventDTO);
-        return null;
+    private final EventRepository eventRepository;
+    private final ModelMapper modelMapper;
+
+    public EventDTO saveEvent(EventDTO eventDTO) {
+        Event event = this.modelMapper.map(eventDTO, Event.class);
+        Event savedEntity = this.eventRepository.save(event);
+        log.info("Successfully saved event with id= {}", savedEntity.getId());
+        return this.modelMapper.map(savedEntity, EventDTO.class);
     }
 }

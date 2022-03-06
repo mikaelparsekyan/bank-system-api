@@ -1,3 +1,2 @@
 # bank-system-api
-
-## wip
+![diagram](./documentation/architecture_diagram.jpeg)

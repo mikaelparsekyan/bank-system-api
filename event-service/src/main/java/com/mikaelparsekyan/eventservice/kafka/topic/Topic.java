@@ -1,9 +1,15 @@
 package com.mikaelparsekyan.eventservice.kafka.topic;
 
-import lombok.AllArgsConstructor;
-import lombok.experimental.UtilityClass;
+import lombok.RequiredArgsConstructor;
 
-@UtilityClass
-public class Topic {
-    public static final String USER_CREATION = "USER_CREATION";
+@RequiredArgsConstructor
+@SuppressWarnings("squid:S115")
+public enum Topic {
+    TopicUserCreated(Constants.USER_CREATED);
+    
+    private final String topicName;
+
+    public interface Constants {
+        String USER_CREATED = "user_created";
+    }
 }
