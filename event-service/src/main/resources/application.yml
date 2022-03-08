@@ -1,0 +1,38 @@
+spring:
+    jpa:
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+                jdbc:
+                    time_zone: UTC
+                format_sql: 'TRUE'
+        hibernate:
+            ddl-auto: update
+    data:
+        rest:
+            base-path: /api
+    kafka:
+        bootstrap-servers: localhost:9092
+        consumer:
+            properties:
+                spring:
+                    json:
+                        value:
+                            default:
+                                type: com.mikaelparsekyan.eventservice.service.dto.EventDTO
+    datasource:
+        password: '1234'
+        driver-class-name: org.postgresql.Driver
+        username: root
+        url: jdbc:postgresql://${database.host}:${database.port}/${database.name}?useSSL=false&createDatabaseIfNotExist=true
+database:
+    name: event_db
+    host: localhost
+    port: '5432'
+server:
+    error:
+        whitelabel:
+            enabled: 'false'
+    port: '8081'
+
+
