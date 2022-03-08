@@ -2,15 +2,15 @@
 Bank system is project where members can register, save and withdraw money. 
 It simulates basic ATM.
 
-## ✔️ Build Requirements
+## ✔️ Build requirements
 To run this application you need to have following software installed in your environment:
 
-    Java 11
+    Java 11 (or higher)
     Docker
     Docker Compose
    
 ## :interrobang: How to run the application?
-1. Run `./gradlew build` for Linux(MacOS) or `gradlew.bat build` for Windows
+1. Run `./gradlew build` for Linux (MacOS) or `gradlew.bat build` for Windows
 2. Start application into docker environment using `docker-compose up` or do
  this by running all services in `application.yml`. Docker compose will take up `Kafka`, `Zookeeper` and `PostgreSQL`.
 3. Checkout [Swagger API](localhost:8080/swagger-ui.html#/)
