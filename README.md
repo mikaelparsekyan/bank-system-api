@@ -18,7 +18,7 @@ To run this application you need to have following software installed in your en
 
 ## Architecture
 
-<p>Bank system API is built based on microservice architecture.</p>
+<p>Bank system API is built based on microservice and event driven architecture.</p>
 
 Project architecture diagram:
 ![diagram](./documentation/architecture_diagram.jpeg)
