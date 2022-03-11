@@ -6,6 +6,7 @@ import com.mikaelparsekyan.eventservice.persistence.repository.EventRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
+import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
 
 @Slf4j
@@ -16,7 +17,7 @@ public class EventService {
     private final EventRepository eventRepository;
     private final ModelMapper modelMapper;
 
-    public EventDTO saveEvent(EventDTO eventDTO) {
+    public EventDTO saveEvent(@Payload EventDTO eventDTO) {
         Event event = this.modelMapper.map(eventDTO, Event.class);
         Event savedEntity = this.eventRepository.save(event);
         log.info("Successfully saved event with id= {}", savedEntity.getId());

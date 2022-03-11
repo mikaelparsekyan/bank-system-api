@@ -1,15 +1,14 @@
-package com.mikaelparsekyan.eventservice.persistence.model;
+package com.mikaelparsekyan.common.persistence.model;
 
-import lombok.Getter;
-import lombok.Setter;
-import org.hibernate.annotations.Type;
-
+import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.PrePersist;
 import javax.validation.constraints.NotNull;
-import java.util.UUID;
+import lombok.Getter;
+import lombok.Setter;
+import org.hibernate.annotations.Type;
 
 @MappedSuperclass
 @Getter

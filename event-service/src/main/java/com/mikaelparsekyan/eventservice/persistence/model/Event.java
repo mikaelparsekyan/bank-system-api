@@ -2,6 +2,7 @@ package com.mikaelparsekyan.eventservice.persistence.model;
 
 import com.mikaelparsekyan.common.enumeration.EventStatus;
 import com.mikaelparsekyan.common.enumeration.EventType;
+import com.mikaelparsekyan.common.persistence.model.BaseEntity;
 import lombok.Data;
 
 import javax.persistence.Column;

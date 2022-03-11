@@ -11,14 +11,15 @@ import org.springframework.stereotype.Component;
 
 @RequiredArgsConstructor
 @Component
-public class TopicEventConsumer implements TopicConsumer<ConsumerRecord<String, String>> {
+public class TopicEventConsumer implements TopicConsumer<EventDTO> {
 
     private final EventService eventService;
-    private final Gson gson;
 
-    @KafkaListener(id = "TopicEventConsumer", topics = Topic.Constants.CREATE_EVENT)
-    public void listen(ConsumerRecord<String, String> message) {
-        EventDTO event = gson.fromJson(message.value(), EventDTO.class);
+    @KafkaListener(id = "TopicEventConsumer",
+        topics = Topic.Constants.CREATE_EVENT,
+        containerFactory = "runningListenerContainerFactory"
+    )
+    public void listen(EventDTO event) {
         this.eventService.saveEvent(event);
     }
 }
