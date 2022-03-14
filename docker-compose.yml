@@ -3,25 +3,25 @@ version: '3'
 services:
   db:
     restart: always
-    image: postgres:13.6
-    container_name: postgresql
+    image: mysql
+    container_name: mysql
     environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=root
-      - POSTGRES_PASSWORD=1234
+      - MYSQL_ROOT_PASSWORD=1234
     ports:
-      - "5432:5432"
+      - "3306:3306"
     volumes:
-      - postgresql_data:/var/lib/postgresql/data
+      - mysql_data:/var/lib/postgresql/data
 
   zookeeper:
       image: confluentinc/cp-zookeeper
+      container_name: zookeeper
       ports:
           - 2181:2181
       environment:
           ZOOKEEPER_CLIENT_PORT: 2181
   kafka:
     image: confluentinc/cp-kafka
+    container_name: kafka
     ports:
       - 9092:9092
     depends_on:
@@ -32,7 +32,7 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 
 volumes:
-  postgresql_data:
+  mysql_data:
   zookeeper_data:
     driver: local
   kafka_data:

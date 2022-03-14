@@ -1,5 +1,4 @@
 plugins {
-    id 'org.flywaydb.flyway' version '6.4.3'
     id 'org.springframework.boot' version '2.3.1.RELEASE'
     id 'io.spring.dependency-management' version '1.0.9.RELEASE'
     id 'java'
@@ -19,13 +18,11 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.kafka:spring-kafka'
-    implementation 'org.flywaydb:flyway-maven-plugin:8.5.2'
-    implementation group: 'org.postgresql', name: 'postgresql', version: '42.3.3'
     implementation group: 'org.modelmapper', name: 'modelmapper', version: '3.0.0'
     implementation group: 'com.google.code.gson', name: 'gson', version: '2.9.0'
+    implementation 'mysql:mysql-connector-java'
     implementation project(':common')
     compileOnly 'org.projectlombok:lombok'
-    runtimeOnly 'mysql:mysql-connector-java'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'

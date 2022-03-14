@@ -1,1 +1,0 @@
-CREATE DATABASE member_db;

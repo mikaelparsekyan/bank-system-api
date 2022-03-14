@@ -12,7 +12,7 @@ To run this application you need to have following software installed in your en
 ## :interrobang: How to run the application?
 1. Run `./gradlew build` for Linux (MacOS) or `gradlew.bat build` for Windows
 2. Start application into docker environment using `docker-compose up` or do
- this by running all services in `application.yml`. Docker compose will take up `Kafka`, `Zookeeper` and `PostgreSQL`.
+ this by running all services in `application.yml`. Docker compose will take up `Kafka`, `Zookeeper` and `MySQL`.
 3. Checkout [Swagger API](localhost:8080/swagger-ui.html#/)
   
 

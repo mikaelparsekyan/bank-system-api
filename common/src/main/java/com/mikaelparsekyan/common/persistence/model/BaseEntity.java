@@ -15,10 +15,9 @@ import org.hibernate.annotations.Type;
 @Setter
 public abstract class BaseEntity {
 
-    @Id()
+    @Id
     @NotNull
-    @Type(type = "pg-uuid")
-    @Column(columnDefinition = "uuid", unique = true)
+    @Type(type = "uuid-binary")
     private UUID id;
 
     /**

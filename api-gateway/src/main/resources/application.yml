@@ -5,4 +5,4 @@ server:
             enabled: false
 spring:
     datasource:
-        ena
+        url:
