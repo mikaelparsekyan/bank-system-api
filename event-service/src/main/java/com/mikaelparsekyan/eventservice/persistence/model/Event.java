@@ -3,6 +3,7 @@ package com.mikaelparsekyan.eventservice.persistence.model;
 import com.mikaelparsekyan.common.enumeration.EventStatus;
 import com.mikaelparsekyan.common.enumeration.EventType;
 import com.mikaelparsekyan.common.persistence.model.BaseEntity;
+import com.mikaelparsekyan.common.persistence.model.BaseEntityAudit;
 import lombok.Data;
 
 import javax.persistence.Column;
@@ -15,7 +16,7 @@ import javax.persistence.Table;
 @Data
 @Entity
 @Table(name = "event")
-public class Event extends BaseEntity {
+public class Event extends BaseEntityAudit {
 
     @Column(nullable = false, columnDefinition = "VARCHAR(50) default 'UNKNOWN'")
     @Enumerated(EnumType.STRING)
